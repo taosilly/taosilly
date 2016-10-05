@@ -1,0 +1,58 @@
+
+@model Contact
+
+
+@{
+    ViewData["Title"] = "留言";
+}
+
+
+<section class="height-70 bg--dark imagebg page-title page-title--animate parallax" data-overlay="6">
+                <div class="background-image-holder">
+                    <img alt="image" src="img/hero16.jpg" />
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 text-center">
+                            <h3>如果你有什么疑惑或问题，就给我们留言吧！</h3>
+                            <p class="lead">真诚地接收您的留言，我们将最快的时间回复。</p>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <form asp-controller="Contact" asp-action="Index" method="post" >
+                    <h4 class="text-center">给我们留言</h4>
+                     <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="input-with-icon col-sm-12">
+                        <i class="icon-MaleFemale"></i>
+                        <input asp-for="UserName"  name="UserName" placeholder="Your Name" />
+                    </div>
+                    <div class="input-with-icon col-sm-6">
+                        <i class="icon-Email"></i>
+                        <input asp-for="Email"  name="Email" placeholder="Email Address" />
+                    </div>
+                    <div class="input-with-icon col-sm-6">
+                        <i class="icon-Phone-2"></i>
+                        <input asp-for="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" />
+                    </div>
+                    <div class="col-sm-12">
+                        <textarea asp-for="Message"  name="Message" placeholder="Your Message" rows="8"></textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn--primary">
+                           发送
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
